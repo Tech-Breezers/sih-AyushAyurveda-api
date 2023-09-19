@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require('cors'); 
+
 const medRouter = require("./routers/med_router");
 const treatmentRouter = require("./routers/treatment_router");
 const searchRouter = require("./routers/search_router");
@@ -6,6 +8,8 @@ const suggestRouter = require("./routers/suggest_router");
 
 const app = express();
 const port = 3001;
+
+app.use(cors());
 
 // app.use("/", express.static("website"));
 
