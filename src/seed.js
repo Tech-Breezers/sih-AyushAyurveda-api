@@ -44,8 +44,8 @@ async function createTables() {
             CREATE TABLE IF NOT EXISTS meds (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 medicine TEXT,
-                precautions TEXT,
-                dosage TEXT
+                description TEXT,
+                precautions TEXT
             );
         `);
 
@@ -74,20 +74,72 @@ async function seedData() {
     try {
 
         await connection.query(`
-            INSERT INTO meds (medicine, precautions, dosage)
+            INSERT INTO meds (medicine, description, precautions)
             VALUES
 
-                ('tulsi', 
-                'Precaution 1', 
-                'Dosage 1'),
+                ('lobelia', 
+                'Lobelia species are annual or perennial herbs or undershrubs, rarely shrubby, although the “tree” lobelias found at high elevations on the mountains of tropical Africa are remarkable arborescent forms. The genus has a great diversity of forms, and species frequently appear dissimilar from each other.', 
+                'induce vomiting,convulsions,nausea'),
 
-                ('ashwaganda', 
-                'Precaution 2', 
-                'Dosage 2'),
+                ('ephedra', 
+                'Ephedra (Ephedra sinica), also called ma huang, is an herb that has been used in Traditional Chinese Medicine (TCM) for more than 5,000 years, primarily to treat asthma, bronchitis, and hay fever. Ephedra is also prescribed for symptoms of cold and flu, including nasal congestion, cough, fever, and chills.', 
+                'hypersensitivity reaction'),
 
-                ('aloe', 
-                'Precaution 3', 
-                'Dosage 3');
+                ('haritaki', 
+                'Haritaki is a drupe-like fruit, oval in shape with size varying between 2 - 4.5 cm in length and 1.2 - 2.5 cm in breadth having 5 longitudinal ridges. Depending upon its variety, it turns green - blackish in color when ripens. Haritaki fruit tastes sweet, sour, bitter depending upon its types.', 
+                'leads to system weakening if taken with alcohol, not recommended during pregnancy'),
+
+                ('bala', 
+                'It goes by the scientific name Sida cordifolia, a perennial herb that grows to 30 metres height with oblong or heart-shaped leaves bearing small, solitary, axillary and white coloured florals. The roots and stems of Bala are very stout and strong. A native plant to India that grows along wastelands and roadsides.', 
+                'slow down heart beat, low BP'),
+
+                ('saffron', 
+                "Saffron is the dried stigma from the Crocus sativus flower. The name 'saffron' derives from an Arabic word meaning 'to become yellow' which refers to saffron's use as a bright yellow dye. The Latin name 'crocus' most likely stems from an ancient Sanskrit word for saffron.", 
+                'a runny nose or sneezing,pain or tenderness around your cheeks'),
+
+                ('Bala', 
+                'This herb is used to increase strength of body. Bala is an ancient Ayurveda herb, used widely in a variety of Ayurveda medicines and oils to improve strength of bones.', 
+                'Skin rashes'),
+
+                ('Brahmi', 
+                'Bacopa monnieri, also called brahmi, water hyssop, thyme-leaved gratiola, and herb of grace, is a staple plant in traditional Ayurvedic medicine. Bacopa monnieri has been used by Ayurvedic medical practitioners for centuries for a variety of purposes, including improving memory, reducing anxiety, and treating epilepsy', 
+                'dry mouth, headache, dizziness, drowsiness, palpitation'),
+
+                ('Yogaraj Guggul', 
+                'Yogaraja Gulgulu vatika is an ayurvedic medicine for joint pain. It is in tablet form. Its unique formulation may help in reducing joint inflammation, obesity, and muscle pain. It acts by balancing Vata dosha in the body.', 
+                'skin rash, diarrhea, mild nausea, hiccups,irregular menstrual cycles'),
+
+                ('sandalwood', 
+                'Sandalwood describes a number of small tree species in the genus Santalum, which occur in south and Southeast Asia, Australia and the Pacific. The trees produce an oil, deposited in the heartwood, which when extracted by distillation is used in the international perfumery market.', 
+                'Skin allergy'),
+
+                ('turmeric', 
+                'An upright herb with large, oblong leaves that are dark green on the upper surface and pale green underneath. Its yellow-white flowers grow on a spike-like stalk and have small, brown seeds. Turmeric only reproduces via its underground stem (rhizome) which is thick and ringed with the bases of old leaves.', 
+                'rashes and outbreaks, and shortness of breath'),
+
+                ('gokshura', 
+                'Gokshura is a small leafy plant commonly known as Tribulus terrestris in Western countries. In traditional medicine, people used gokshura to treat various disorders, such as urinary tract disorders, kidney disease, and erectile dysfunction.', 
+                'stomach distress , rashes'),
+
+                ('bilwa', 
+                'Aegle marmelos commonly known as bilwa or bael is an important medicinal plant in Ayurveda. The English name for bael is stone apple, as its rather large fruit is like pale yellow to golden orange when ripe.', 
+                'swelling, pain, fever'),
+
+                ('chitrak', 
+                'Chitrak is a herbaceous shrub coming from the Plumbaginaceae family. The roots of chitrak are light yellow coloured when fresh, reddish-brown when dry, and are usually straight unbranched, or slightly branched with or without secondary rootlets. It has globous, woody stems with spreading green branches.', 
+                'itchy nose, sore throat'),
+
+                ('dashmul', 
+                'Dashmool Kadha, an Ayurvedic herbal tonic with ten powerful roots that help to restore balance to the body and promote post-pregnancy care. This best-quality kadha has been prepared using the traditional Indian Jappa method, ensuring its authenticity and effectiveness.', 
+                'Skin allergy'),
+
+                ('amalaki', 
+                'It is a large deciduous tree with greenish-grey bark. Widely available through out India and is also found under cultivation throughout tropical India.', 
+                'itching'),
+
+                ('rock salt', 
+                'Rock salt is the name of a sedimentary rock that consists almost entirely of halite, a mineral composed of sodium chloride, NaCl. It forms where large volumes of sea water or salty lake water evaporate from an arid-climate basin -- where there is a replenishing flow of salt water and a restricted input of other water.', 
+                'High BP');
                 
         `);
 
@@ -122,7 +174,7 @@ async function seedData() {
 
                 ('Fever', 
                 'Headache, Muscle/Joint pain, Nausea',
-                '["Vasaka leaf", "Shukti Bhasma(10%)", "fennel Seeds", "Cinnamon", "Ginger Powder"]', 
+                '["Vasaka leaf", "Shukti Bhasma(10%)", "fennel Seeds", "Cinnamon", "Ginger Powder", "tulsi"]', 
                 "1. Vasaka leaf is another simple remedy for treating fever. It should be mixed with 'Shukti Bhasma' (10%) and should be taken twice daily in 2 gram doses. 2.Ginger tea is another remedy that always turns out to be comforting and is of great value. Consume a concoction made by adding half a teaspoon of fennel seeds, cinnamon, ginger powder and a little clove to a hot cup of water helps. The herbs should be soaked for about 10 minutes. They should be filtered afterwards before drinking the tea. It should be kept in mind that both ginger and aspirin dilute the blood. Thus, ginger tea should be avoided for two hours after consuming aspirin.", 
                 'Jvar'),
 

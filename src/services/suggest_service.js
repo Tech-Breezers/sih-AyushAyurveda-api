@@ -1,6 +1,15 @@
 const db = require("../db");
 const config = require("../../config");
 
+async function suggestAll(searchTerm) {
+    const sql = `
+        SELECT disease, symptoms FROM treats
+        WHERE LOWER(\`disease\`) LIKE LOWER(?) OR LOWER(\`symptoms\`) LIKE LOWER(?);
+    `;
+
+    const rows = await db.query(sql, [`%${searchTerm}%`, `%${searchTerm}%`]);
+    return rows;
+}
 
 async function suggestMeds() {
     const sql = `
@@ -36,6 +45,7 @@ async function suggestDisease() {
 }
 
 module.exports = {
+    suggestAll,
     suggestMeds,
     suggestSymptoms,
     suggestDisease,
