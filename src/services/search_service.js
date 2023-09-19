@@ -5,8 +5,8 @@ const config = require("../../config");
 async function searchMeds(searchTerm) {
     const sql = `
         SELECT * FROM meds
-        WHERE LOWER(\`medicine\`) LIKE LOWER(?);
-        LIMIT 5
+        WHERE LOWER(\`medicine\`) LIKE LOWER(?)
+        LIMIT 5;
 
     `;
 
@@ -17,8 +17,8 @@ async function searchMeds(searchTerm) {
 async function searchTreats(searchTerm) {
     const sql = `
         SELECT * FROM treats
-        WHERE LOWER(\`disease\`) LIKE LOWER(?) OR LOWER(\`symptoms\`) LIKE LOWER(?);
-        LIMIT 5
+        WHERE LOWER(\`disease\`) LIKE LOWER(?) OR LOWER(\`symptoms\`) LIKE LOWER(?)
+        LIMIT 5;
 
     `;
 
