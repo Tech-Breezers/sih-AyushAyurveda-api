@@ -1,0 +1,1 @@
+# AYUSH Ayurveda API
