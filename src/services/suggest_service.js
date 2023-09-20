@@ -13,7 +13,7 @@ async function suggestAll(searchTerm) {
 
 async function suggestMeds() {
     const sql = `
-        SELECT medicine FROM meds
+        SELECT id, medicine FROM meds
         ORDER BY RAND()
         LIMIT 5
     `;
@@ -24,7 +24,7 @@ async function suggestMeds() {
 
 async function suggestSymptoms() {
     const sql = `
-        SELECT symp FROM treats
+        SELECT id, symp FROM treats
         ORDER BY RAND()
         LIMIT 5
     `;
@@ -42,7 +42,7 @@ async function suggestSymptoms() {
 
 async function suggestDisease() {
     const sql = `
-        SELECT disease FROM treats
+        SELECT id, disease FROM treats
         ORDER BY RAND()
         LIMIT 5
     `;
