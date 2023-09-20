@@ -3,7 +3,7 @@ const config = require("../../config");
 
 async function suggestAll(searchTerm) {
     const sql = `
-        SELECT disease, symptoms FROM treats
+        SELECT id, disease, symptoms FROM treats
         WHERE LOWER(\`disease\`) LIKE LOWER(?) OR LOWER(\`symptoms\`) LIKE LOWER(?);
     `;
 
