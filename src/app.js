@@ -11,7 +11,7 @@ const port = 3001;
 
 app.use(cors());
 
-// app.use("/", express.static("website"));
+app.use("/", express.static("./src/website"));
 
 app.use(express.json());
 
