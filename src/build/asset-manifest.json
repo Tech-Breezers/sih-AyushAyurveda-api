@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.0e2a20c7.css",
-    "main.js": "/static/js/main.17c774d4.js",
+    "main.js": "/static/js/main.aeb3295f.js",
     "static/js/787.f41d3982.chunk.js": "/static/js/787.f41d3982.chunk.js",
     "static/media/pexels-nataliya-vaitkevich-7525913 (1080p).mp4": "/static/media/pexels-nataliya-vaitkevich-7525913 (1080p).6891201a9258f9be0fc5.mp4",
     "static/media/favicon - ayurveda.png": "/static/media/favicon - ayurveda.fe6b970d2c577d7ea1ac.png",
     "static/media/SAMARN__.TTF": "/static/media/SAMARN__.917d68d5a10d22b2a4fc.TTF",
     "index.html": "/index.html",
     "main.0e2a20c7.css.map": "/static/css/main.0e2a20c7.css.map",
-    "main.17c774d4.js.map": "/static/js/main.17c774d4.js.map",
+    "main.aeb3295f.js.map": "/static/js/main.aeb3295f.js.map",
     "787.f41d3982.chunk.js.map": "/static/js/787.f41d3982.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e2a20c7.css",
-    "static/js/main.17c774d4.js"
+    "static/js/main.aeb3295f.js"
   ]
 }
